@@ -1,8 +1,11 @@
 import './App.css';
+import Products from './views/products';
 
 function App() {
+
   return (
-    <div className="App">
+    <div className="App text-danger">
+      <Products/>
     </div>
   );
 }
