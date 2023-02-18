@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+import ProductsContainer from "../components/ProductsContainer";
+import Container from "../layout/Container";
 
 const Products = () => {
     const navbarItemNames = ['Home', 'Link', 'Disabled'];
@@ -19,6 +21,9 @@ const Products = () => {
                 dropdownName={dropdown.name}
                 dropdownItemsNames={dropdown.itemsNames}
             />
+            <Container dFlex>
+                <ProductsContainer/>
+            </Container>
         </>
     )
 }
