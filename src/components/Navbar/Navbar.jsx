@@ -22,13 +22,18 @@ const Navbar = (props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        {navbarItemNames.map(itemName => <NavbarItem itemName={itemName}/>)}
-                    { showDropdown && 
-                        <Dropdown
-                            dropdownItemsNames={dropdownItemsNames}
-                            dropdownName={dropdownName}
-                        />
-                    }
+                        {navbarItemNames?.map((itemName, index) => 
+                            <NavbarItem 
+                                key={index}
+                                itemName={itemName}
+                            />
+                        )}
+                        { showDropdown && 
+                            <Dropdown
+                                dropdownItemsNames={dropdownItemsNames}
+                                dropdownName={dropdownName}
+                            />
+                        }
                     </ul>
                     { searchBar && <SearchBar/> }
                 </div>

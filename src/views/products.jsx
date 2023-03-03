@@ -4,6 +4,7 @@ import ProductsContainer from "../components/ProductsContainer";
 import Container from "../layout/Container";
 
 const Products = () => {
+
     const navbarItemNames = ['Home', 'Link', 'Disabled'];
     const dropdown = {
         name : 'Video Juegos',

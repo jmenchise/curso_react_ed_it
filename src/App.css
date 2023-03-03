@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+.btn-style {
+    padding: .3em;
+    display: block;
+    margin: 2em auto;
+    border: 0;
+    border-radius: .7em;
+    color: hsl(210, 20%, 30%);
+    background-color: hsl(210, 20%, 80%);
+}
+
+.btn:hover {
+    background-color: hsl(210, 20%, 60%);
+    color: hsl(210, 20%, 98%);
+}
