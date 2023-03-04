@@ -1,63 +1,59 @@
-import React, {useState} from 'react'
-
+import React, { useState, useEffect } from 'react'
+import Input from '../../shared/Input'
 
 const Form = (props) => {
 
-    const {condicional} = props
+    const {
+        initialState,
+        inputs,
+        formTitle,
+        onSubmit,
+        toggleEnviado,
+        handleText
+    } = props
+    
+
+    const[form, setForm] = useState(initialState)
 
 
-    const[form, setForm] = useState({
-        email: '',
-        pasword: '',
-    })
-
-
-    const{email, pasword} = form
+    useEffect(() => {
+        setForm(initialState)
+    }, [initialState])
 
 
     const handleChange = e => {
-        const{value, name} = e.target;
+        const{name, value} = e.target
         setForm({
             ...form,
             [name]: value
         })
     }
 
-
     const handleSubmit = e => {
-        e.preventDefault();
-        console.log(form);
-        setForm({
-            email: '',
-            pasword: '',
-        })
+        onSubmit(e, form);
+        toggleEnviado();
     }
-
-
-
+    
     return (
         <div>
-            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection:'column', width:'40%', margin:'40px auto' }}>
-                <h1>Formulario</h1>
-                <label htmlFor="email">Email:</label>
-                <input 
-                    onChange={handleChange}
-                    value={email}
-                    type="email"
-                    name='email'
-                    placeholder= 'usuario@email.com'
-                />
-                <label htmlFor="pasword">Contraseña:</label>
-                <input 
-                    onChange={handleChange}
-                    value={pasword}
-                    type="pasword"
-                    placeholder='*******'
-                    name='pasword'
-                />
-                <input type="submit" value="Enviar" />
+            <input 
+                type="text" onChange={ e => handleText(e.target.value)} 
+                placeholder={'Escribí acá el texto a cargar.'}
+            />
+            <form onSubmit={onSubmit ? e => handleSubmit(e) : null}>
+                <h1>{formTitle || 'Titulo'}</h1>
+                {inputs?.map(({name, id, type, placeholder, required}) => (
+                        <Input
+                            key={id}
+                            name={name}
+                            type={type}
+                            placeholder={placeholder}
+                            required={required}
+                            onChange={handleChange}
+                        />
+                ))}
+                <button type='submit'>Enviar</button>
             </form>
-            {condicional && <div>Acá el condicional llegó true</div>}
         </div>
     )
 }
