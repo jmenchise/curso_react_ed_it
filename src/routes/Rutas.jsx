@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Nosotros from '../pages/Nosotros'
 import Contacto from '../pages/Contacto'
 import Navbar from '../components/Navbar/Navbar'
+import DetailPage from '../pages/DetailPage'
 
 
 const Rutas = () => {
@@ -42,6 +43,7 @@ const Rutas = () => {
                 <Route path='/' element={<Home/>} />
                 <Route path='/nosotros' element={<Nosotros/>} />
                 <Route path='/contacto' element={<Contacto/>} />
+                <Route path='/detail/:id' element={<DetailPage/>} />
             </Routes>
         </BrowserRouter>
     )

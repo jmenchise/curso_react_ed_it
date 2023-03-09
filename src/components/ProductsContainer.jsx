@@ -50,6 +50,7 @@ const ProductsContainer = () => {
         <>
             {products.map(({ id, img, title, description, comics }) => (
                 <Cart
+                    id={id}
                     key={id}
                     img={img}
                     title={title}
