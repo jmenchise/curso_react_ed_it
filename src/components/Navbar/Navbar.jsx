@@ -22,10 +22,11 @@ const Navbar = (props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        {navbarItemNames?.map((itemName, index) => 
+                        {navbarItemNames?.map(({itemName, path}, index) => 
                             <NavbarItem 
                                 key={index}
                                 itemName={itemName}
+                                path={path}
                             />
                         )}
                         { showDropdown && 
