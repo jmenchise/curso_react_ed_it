@@ -1,13 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const CartDetail = () => {
+const CartDetail = (props) => {
+
+
+    const {img, nombre} = props
+
+    const navigate = useNavigate()
+    
     return (
         <div>
+            <button className='btn btn-danger' onClick={() => navigate(-1)}>Atras</button>
             <div>
-                <img src={'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Superman_S_symbol.svg/1200px-Superman_S_symbol.svg.png'} alt="" />
+                <img src={img} alt="" />
             </div>
             <div>
-                <h2>Super Hero Name</h2>
+                <h2>{nombre}</h2>
             </div>
         </div>
     )

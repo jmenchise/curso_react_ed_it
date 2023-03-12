@@ -29,12 +29,6 @@ const Navbar = (props) => {
                                 path={path}
                             />
                         )}
-                        { showDropdown && 
-                            <Dropdown
-                                dropdownItemsNames={dropdownItemsNames}
-                                dropdownName={dropdownName}
-                            />
-                        }
                     </ul>
                     { searchBar && <SearchBar/> }
                 </div>
