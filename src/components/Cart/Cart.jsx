@@ -28,13 +28,13 @@ const Cart = (props) => {
                     // disabled
                     onClick={handleClick}
                 />
-                {/* <Button 
+                <Button 
                     className={buttonClassName}
                     buttonText={'Ir al detalle'}
                     // disabled
                     onClick={() => navigate(`/detail/${id}`)}
-                /> */}
-                <Link to={`/detail/${id}`} className={'btn btn-info'}>Ir al detalle</Link>
+                />
+                {/* <Link to={`/detail/${id}`} className={'btn btn-info'}>Ir al detalle</Link> */}
 
             </div>
         </div>
