@@ -14,11 +14,11 @@ const DetailPage = () => {
     const [findSuperHeroe, setFindSuperHeroe] = useState(true)
     console.log('SearchParams:', SearchParams.get('q'));
     
-    const redirectPage = () => {
-        setTimeout(() => {
-            setFindSuperHeroe(!findSuperHeroe);
-        }, 3000);
-    }
+    // const redirectPage = () => {
+    //     setTimeout(() => {
+    //         setFindSuperHeroe(!findSuperHeroe);
+    //     }, 3000);
+    // }
 
 
     if (superHeroe) {
@@ -31,7 +31,7 @@ const DetailPage = () => {
             </div>
         )
     } else {
-        redirectPage();
+        // redirectPage();
         return(
             <div>
                 <h1>El artículo no existe.</h1>
