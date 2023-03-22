@@ -1,5 +1,4 @@
 import React from "react";
-import Dropdown from "./Dropdown";
 import NavbarItem from "./NavbarItem";
 import SearchBar from "./SearchBar";
 
@@ -7,10 +6,7 @@ const Navbar = (props) => {
     const {
         navbarLogoText,
         navbarItemNames,
-        searchBar,
-        showDropdown,
-        dropdownName,
-        dropdownItemsNames
+        searchBar
     } = props;
     
     return (
