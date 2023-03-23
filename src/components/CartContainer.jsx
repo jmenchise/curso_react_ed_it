@@ -9,7 +9,7 @@ const CartContainer = () => {
             {!cart.length ? <h1>Carrito Vacío</h1> : cart.map(product => (
                 <>
                     <div className='d-flex card'>
-                        <span>Nombre: {product.name}</span>
+                        <span>Nombre: {product.name} {product.version}</span>
                         <span>${product.price}</span>
                         <span>Cantidad: {product.count}</span>
                     </div>

@@ -33,11 +33,11 @@ const EcommerceProvider = ({children}) => {
     ]
     const nombreDelProfe = 'Hovha';
     const saludar = () => console.log('Hola mundo');
-    const addToCart = product => {
-        setCart([...cart, product])
-    };
+    const addToCart = product => setCart([...cart, product])
     
     console.log('cart:', cart)
+
+    
     return (
         <EcommerceContext.Provider value={{
             products,
