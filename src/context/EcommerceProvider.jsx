@@ -1,12 +1,10 @@
 import { createContext, useState } from 'react'
 
-
 export const EcommerceContext = createContext('')
 
-
 const EcommerceProvider = ({children}) => {
-    const [cart, setCart] = useState([])
 
+    const [cart, setCart] = useState([])
     const products = [
         {
             id: '1',
@@ -33,16 +31,20 @@ const EcommerceProvider = ({children}) => {
             year: 2019
         },
     ]
-
     const nombreDelProfe = 'Hovha';
-
     const saludar = () => console.log('Hola mundo');
+    const addToCart = product => {
+        setCart([...cart, product])
+    };
     
+    console.log('cart:', cart)
     return (
         <EcommerceContext.Provider value={{
             products,
             nombreDelProfe,
-            saludar
+            saludar,
+            cart,
+            addToCart
         }}>
             {children}
         </EcommerceContext.Provider>

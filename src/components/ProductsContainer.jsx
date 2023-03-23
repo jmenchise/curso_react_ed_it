@@ -5,6 +5,7 @@ import Card from './Card'
 const ProductsContainer = () => {
 
     const {products, nombreDelProfe, saludar} = useContext(EcommerceContext);
+
         
     
     return (
@@ -13,6 +14,7 @@ const ProductsContainer = () => {
                 <Card
                     key={product.id}
                     {...product}
+                    // hideButton
                 />
             ))}
         </div>
