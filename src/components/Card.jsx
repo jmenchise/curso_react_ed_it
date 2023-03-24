@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import ItemCount from './ItemCount';
+import ItemCounter from './ItemCounter';
 
 const Card = (props) => {
 
@@ -10,7 +10,7 @@ const Card = (props) => {
 
     return (
         <div className="card mx-2" style={{width: '18rem'}}>
-            <img src={image || 'img'} className="card-img-top w-50 h-50 mx-auto" alt='celu-image' />
+            <img src={image || 'img'} className="card-img-top w-50 h-50 mx-auto" alt='imagen' />
             <div className="card-body">
                 <h5 className="card-title">Modelo: {name || 'Name'}</h5>
                 <h6 className="fs-4 text-center">Version: {version || 'Version'}</h6>
@@ -27,7 +27,7 @@ const Card = (props) => {
                     </button>
                 }
             </div>
-            {hideButton && <ItemCount product = {props}/>}
+            {hideButton && <ItemCounter product = {props}/>}
         </div>
     )
 }
