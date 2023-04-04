@@ -1,10 +1,10 @@
 import './App.css';
+import Index from './routes';
 
 function App() {
   return (
-    <div className="App">
-    </div>
-  );
+    <Index/>
+  )
 }
 
 export default App;

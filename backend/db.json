@@ -1,0 +1,27 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "zapatilla",
+            "brand": "nike",
+            "model": "jordan retro 4",
+            "price": 12000
+        },
+        {
+            "id": 2,
+            "name": "zapatilla",
+            "brand": "adidas",
+            "model": "bad buny",
+            "price": 16000
+        }
+    ],
+    "wishlist": [
+        {
+            "id": 2,
+            "name": "zapatilla",
+            "brand": "adidas",
+            "model": "bad buny",
+            "price": 16000
+        }
+    ]
+}
