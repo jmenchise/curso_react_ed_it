@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import EcommerceLayout from './EcommerceLayout'
 import Home from '../pages/Home'
-import WishList from '../pages/WishList'
+import Favorites from '../pages/Favorites'
 import ProductForm from '../pages/ProductForm'
 import ProductsProvider from '../context/ProductsProvider'
 
@@ -14,7 +14,7 @@ const Index = () => {
                 <Routes>
                     <Route path='/' element={<EcommerceLayout/>}>
                         <Route index element={<Home/>}/>
-                        <Route path='wishlist' element={<WishList/>}/>
+                        <Route path='favorites' element={<Favorites/>}/>
                         <Route path='product/form' element={<ProductForm/>}/>
                     </Route>
                 </Routes>

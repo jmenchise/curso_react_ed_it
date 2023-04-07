@@ -1,27 +1,33 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "zapatilla",
-            "brand": "nike",
-            "model": "jordan retro 4",
-            "price": 12000
-        },
-        {
-            "id": 2,
-            "name": "zapatilla",
-            "brand": "adidas",
-            "model": "bad buny",
-            "price": 16000
-        }
-    ],
-    "wishlist": [
-        {
-            "id": 2,
-            "name": "zapatilla",
-            "brand": "adidas",
-            "model": "bad buny",
-            "price": 16000
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "nombre": "zapatilla",
+      "marca": "nike",
+      "modelo": "jordan retro 4",
+      "precio": 12000
+    },
+    {
+      "id": 2,
+      "nombre": "zapatilla",
+      "marca": "adidas",
+      "modelo": "bad buny",
+      "precio": 16000
+    },
+    {
+      "nombre": "zapatilla",
+      "marca": "puma",
+      "modelo": "puma-x-122",
+      "precio": "21000",
+      "id": 3
+    },
+    {
+      "nombre": "campera",
+      "marca": "nike",
+      "modelo": "PSG",
+      "precio": "5000",
+      "id": 4
+    }
+  ],
+  "favorites": []
 }

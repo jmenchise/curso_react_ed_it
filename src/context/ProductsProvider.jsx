@@ -1,30 +1,33 @@
-import React, { createContext, useEffect } from 'react'
+import React, { createContext } from 'react'
 import useLayout from '../hooks/useLayout';
 import useProducts from '../hooks/useProducts';
-import useWishList from '../hooks/useWishList';
+import useFavorites from '../hooks/useFavorites';
 
 export const ProductsContext = createContext('');
 
 const ProductsProvider = ({children}) => {
 
     const { loading } = useLayout();
-    const { products, getProducts } = useProducts();
-    const  { wishList, getWishList } = useWishList();
+    const { products, getProducts, saveProduct } = useProducts();
+    const { favorites, getFavorites, addFavorites, removeFavorites } = useFavorites();
     
-    useEffect(() => {
-        getProducts();
-        getWishList();
-        // eslint-disable-next-line
-    }, [])
+    // useEffect(() => {
+    //     getProducts();
+    //     getFavorites();
+    //     // eslint-disable-next-line
+    // }, [])
     
     
     return (
         <ProductsContext.Provider value={{
             loading,
             products,
-            wishList,
+            favorites,
             getProducts,
-            getWishList
+            saveProduct,
+            getFavorites,
+            addFavorites,
+            removeFavorites
         }}>
             {children}
         </ProductsContext.Provider>

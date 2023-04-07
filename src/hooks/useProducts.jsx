@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useLayout from './useLayout';
 import { axiosClient } from '../axios';
 
@@ -6,6 +6,12 @@ const useProducts = () => {
 
     const {showLoading, hideLoading} = useLayout();
     const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts();
+        // eslint-disable-next-line
+    }, []);
+    
     
     const getProducts = async () => {
         showLoading();
@@ -21,9 +27,24 @@ const useProducts = () => {
     }
     
     
+    const saveProduct = async product => {
+        showLoading();
+        try{
+            const response = await axiosClient.post('/products', product);
+            await getProducts();
+            console.log(response.data);
+            hideLoading();
+        } catch (error) {
+            console.log(error.message);
+            hideLoading();
+        }
+    }
+    
+    
     return {
         products,
-        getProducts
+        getProducts,
+        saveProduct
     }
 }
 

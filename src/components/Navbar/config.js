@@ -5,8 +5,8 @@ export const navLinks = [
         name: 'Home'
     },
     {
-        path: '/wishlist',
-        name: 'Lista de Deseados'
+        path: '/favorites',
+        name: 'Favoritos'
     },
     {
         path: '/product/form',
