@@ -8,7 +8,7 @@ export const ProductsContext = createContext('');
 const ProductsProvider = ({children}) => {
 
     const { loading } = useLayout();
-    const { products, getProducts, saveProduct } = useProducts();
+    const { products, getProducts, saveProduct, putProduct, deleteProduct } = useProducts();
     const { favorites, getFavorites, addFavorites, removeFavorites } = useFavorites();
     
     // useEffect(() => {
@@ -25,6 +25,8 @@ const ProductsProvider = ({children}) => {
             favorites,
             getProducts,
             saveProduct,
+            putProduct,
+            deleteProduct,
             getFavorites,
             addFavorites,
             removeFavorites

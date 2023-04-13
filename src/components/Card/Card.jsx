@@ -1,6 +1,7 @@
 import React from 'react'
-import { AiFillHeart, AiOutlineHeart, AiFillDelete }  from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart, AiFillDelete, AiFillEdit }  from 'react-icons/ai';
 import { isItemExist } from '../../helper';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,9 +16,17 @@ const Card = (props) => {
         favorites,
         inFavorites,
         addFavorites,
-        removeFavorites 
+        removeFavorites,
+        deleteProduct
     } = props;
 
+    const navigate = useNavigate();
+
+    const handleDelete = id => {
+        deleteProduct(id);
+        alert('Producto eliminado con éxito!');
+    }
+    
     return (
         <div className="card w-75 my-3">
             <div className="card-body">
@@ -39,9 +48,17 @@ const Card = (props) => {
                     </span>
                 )}
                 {!inFavorites && !isItemExist(id, favorites) && (
-                    <span onClick={() => addFavorites({id, nombre, marca, modelo, precio})} role='button' className='fs-3'>
-                        <AiOutlineHeart />
-                    </span>
+                    <div>
+                        <span onClick={() => addFavorites({ id, nombre, marca, modelo, precio })} role='button' className='fs-3'>
+                            <AiOutlineHeart />
+                        </span>
+                        <span onClick={() => navigate(`product/edit/${id}`)} role='button' className='fs-3'>
+                            <AiFillEdit />
+                        </span>
+                        <span onClick={() => handleDelete(id)} role='button' className='fs-3 text-danger'>
+                            <AiFillDelete />
+                        </span>
+                    </div>
                 )}
                 {inFavorites && (
                     <span onClick={() => removeFavorites(id)} role='button' className='fs-3 text-danger'>
@@ -50,7 +67,7 @@ const Card = (props) => {
                 )}
             </div>
         </div>
-    )
+    );
 }
 
 export default Card

@@ -4,7 +4,7 @@ import Card from '../components/Card/Card';
 
 const Home = () => {
 
-    const { products, favorites, addFavorites, removeFavorites } = useContext(ProductsContext);
+    const { products, deleteProduct, favorites, addFavorites, removeFavorites } = useContext(ProductsContext);
     
     return (
         <div className='container d-flex flex-column align-items-center py-3'>
@@ -14,6 +14,7 @@ const Home = () => {
                     favorites={favorites}
                     addFavorites={addFavorites}
                     removeFavorites={removeFavorites}
+                    deleteProduct={deleteProduct}
                     {...product}
                 />
             ))}

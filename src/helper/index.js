@@ -10,4 +10,17 @@ export const defineInputType = string => {
     }
 }
 
+export const defineIsDisabled = string => {
+    switch (string) {
+        case 'id':
+            return true
+            
+        default:
+            return false;
+    }
+}
+
 export const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+export const findItemInArray = (id, arr) => arr.find(item => item.id === Number(id));
+    

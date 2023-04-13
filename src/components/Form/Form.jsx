@@ -1,29 +1,23 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Input from '../../shared/Input'
 import useForm from '../../hooks/useForm';
-import { defineInputType } from '../../helper';
-import { ProductsContext } from '../../context/ProductsProvider';
+import { defineInputType, defineIsDisabled } from '../../helper';
 
 const Form = (props) => {
 
-    const { saveProduct } = useContext(ProductsContext);
     
     const {
         initialState,
         buttonText = 'submit',
-        buttonClassName = 'btn btn-primary w-100' 
+        buttonClassName = 'btn btn-primary w-100',
+        toEdit
     } = props;
 
-    const { form, setform, handleChange } = useForm(initialState);
+    const { form, handleChange, handleSubmit } = useForm(initialState);
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        saveProduct(form);
-        setform(initialState);
-    }
 
     return (
-        <form onSubmit={handleSubmit} className='w-50 mx-auto' autoComplete='off'>
+        <form onSubmit={e => handleSubmit(e, toEdit)} className='w-50 mx-auto' autoComplete='off'>
             {
                 Object.entries(form).map(([key, value]) => (
                     <Input
@@ -32,8 +26,9 @@ const Form = (props) => {
                         value={value}
                         type={defineInputType(key)}
                         onChange={handleChange}
+                        disabled={defineIsDisabled(key)}
                     />
-                ))
+                )) 
             }
             <button
                 type="submit"

@@ -3,7 +3,7 @@ import { capitalizeFirstLetter } from '../helper'
 
 const Input = (props) => {
 
-    const {name, type='text', value, onChange} = props
+    const {name, type='text', value, onChange, disabled} = props
     
     return (
         <div className="mb-3">
@@ -14,6 +14,7 @@ const Input = (props) => {
                 type={type} 
                 className="form-control"
                 name={name}
+                disabled={disabled}
             />
         </div>
     )
