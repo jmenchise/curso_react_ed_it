@@ -4,7 +4,6 @@ import { counterReset, counterRest, counterSum, counterSumNum, setCounterNum } f
 const Counter = () => {
 
     const  { count, inputNum }  = useSelector(state => state.counter);
-    console.log('inputNum:', inputNum);
     const dispatch = useDispatch();
     const handleChange = e => dispatch(setCounterNum(Number(e.target.value)));
     const handleClick = (number) => {

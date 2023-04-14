@@ -1,4 +1,4 @@
 
 export const types = {
-    CHANGE_NAME: '@User/CHANGE_NAME',
+        CHANGE_VALUE: '@User/CHANGE_VALUE'
 }

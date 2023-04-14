@@ -9,10 +9,11 @@ const initialState = {
 const userReducer = (state = initialState, { type, payload }) => {
     switch (type) {
 
-        case types.CHANGE_NAME:
-            return { 
-                ...state, 
-                name: 'Pepe'
+        case types.CHANGE_VALUE:
+            return {
+                name: payload.name,
+                userName: payload.userName,
+                password: payload.password
             }
 
         default:
