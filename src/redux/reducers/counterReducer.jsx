@@ -9,7 +9,7 @@ const counterReducer = (state = initialState, { type, payload }) => {
     switch (type) {
 
         case types.SUMAR:
-            return { 
+            return {
                 ...state,
                 count: state.count + 1
             }
@@ -31,7 +31,7 @@ const counterReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 count: state.count + payload
             }
-        
+
         case types.SET_COUNTER:
             return {
                 ...state,
